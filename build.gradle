@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+}
+
+wrapper {
+    gradleVersion = '8.7'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'org.example.testng'
+version = '1.0-SNAPSHOT'
+
+def allureVersion = '2.26.0'
+def aspectJVersion = '1.9.22'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-parameters')
+}
+
+configurations {
+    agent {
+        canBeResolved = true
+        canBeConsumed = true
+    }
+}
+
+dependencies {
+    implementation group: 'io.appium', name: 'java-client', version: '8.5.1'
+
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.12.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-support', version: '4.12.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-api', version: '4.12.1'
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-remote-driver', version: '4.12.1'
+
+    agent "org.aspectj:aspectjweaver:$aspectJVersion"
+
+    implementation "org.testng:testng:7.9.0"
+
+    implementation platform("io.qameta.allure:allure-bom:$allureVersion")
+    implementation "io.qameta.allure:allure-testng"
+
+    implementation "org.slf4j:slf4j-simple:2.0.12"
+}
+
+test {
+    ignoreFailures = true
+    useTestNG()
+    jvmArgs = [ "-javaagent:${configurations.agent.singleFile}" ]
+}
