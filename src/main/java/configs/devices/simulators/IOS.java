@@ -8,7 +8,7 @@ public class IOS extends Device {
 
     public IOS(String deviceName, String model, String version, String uDID, String xcodeOrgId, App app) {
         this.app = app;
-        this.os = "android";
+        this.os = "ios";
         this.origin = "simulator";
         this.device = deviceName;
         this.model = model;

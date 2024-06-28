@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite" parallel="tests" thread-count="2">
+    <test name="IOS Test">
+        <parameter name="os" value="ios"/>
+        <classes>
+            <class name="GoogleSearchTest"/>
+        </classes>
+    </test>
+    <test name="Android Test">
+        <parameter name="os" value="android"/>
+        <classes>
+            <class name="GoogleSearchTest"/>
+        </classes>
+    </test>
+</suite>

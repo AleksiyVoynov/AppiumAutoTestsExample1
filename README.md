@@ -6,29 +6,31 @@
 * installed uiautomator2 driver
 * For Android, you should have the virtual device from Android Studio
 * For iOS, you should have a simulator from Xcode and setup WebDriverAgent to simulator
+* For iOS, you should have a simulator from Xcode and setup WebDriverAgent to simulator
 
 
 # Guide:
-1. Start the Appium server for Android or iOS.
-
+## Start the Appium server for Android or iOS.
     * For Android:
-      ```sh
       appium -a 127.0.0.1 -p 4732 --session-override --log-timestamp --local-timezone --allow-insecure chromedriver_autodownload
-      ```
 
     * For iOS:
-      ```sh
       appium -a 0.0.0.0 -p 4723 --session-override --relaxed-security --driver-xcuitest-webdriveragent-port 8100 --log-timestamp --local-timezone
-      ```
+      
+## Put your device setting instead mine:
+* you can find it here src/test/java/BaseTest.java ' private Device device = new Device(your settings)' 
 
-2. Put your device settings here:
-   ```plaintext
-   src/main/java/configs/Config.java
+## To run tests and generate Allure report:
+* open terminal
+* cd (path to /SeleniumWebDriverAutotest)
+* run `gradle clean`
+* run `gradle test`
 
-3. Then run 'GoogleSearchTest'
-   ```plaintext
-   src/test/java/GoogleSearchTest.java
-   
-4. After run, you can generate report put to console next line:
-   ```plaintext
-   allure serve build/allure-results
+## You can run auto test in parallel for Android and IOS
+* open terminal
+* cd (path to /AppiumAutotestsTestNg)
+* run `gradle clean`
+* run `gradle parallelTest`
+
+## To see a report:
+1. run `allure serve build/allure-results `

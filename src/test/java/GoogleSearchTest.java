@@ -12,11 +12,16 @@ public class GoogleSearchTest extends BaseTest {
             2. make search
             3. validate result""")
     public void testGoogleSearch() {
-        GoogleSearchPage googleSearchPage = new GoogleSearchPage(appiumDriver);
+        GoogleSearchPage googleSearchPage = new GoogleSearchPage(config);
         var testData = "facebook";
 
         googleSearchPage.navigateTo("https://www.google.com");
         googleSearchPage.searchFor(testData);
         Assert.assertTrue(googleSearchPage.getSearchingResult(testData), "nothing was found");
+    }
+
+    @Test(priority = 2, description = "os")
+    public void testGoogleSearch2() {
+        System.out.println(config.device.os);
     }
 }
