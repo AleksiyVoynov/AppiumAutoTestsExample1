@@ -10,7 +10,7 @@
 
 
 # Guide:
-## Start the Appium server for Android or iOS.
+## Start the Appium server for Android and/or iOS.
     * For Android:
       appium -a 127.0.0.1 -p 4732 --session-override --log-timestamp --local-timezone --allow-insecure chromedriver_autodownload
 
