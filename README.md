@@ -22,7 +22,7 @@
 
 ## To run tests and generate Allure report:
 * open terminal
-* cd (path to /AppiumAutotestsTestNg)
+* cd (path to /AppiumAutoTestsExample1)
 * run `gradle clean`
 * run `gradle test`
 
