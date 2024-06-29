@@ -6,7 +6,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class IOS extends Device {
 
-    public IOS(String deviceName, String model, String version, String uDID, String xcodeOrgId, App app) {
+    public IOS(String deviceName, String model, String version, String uDID, App app, String xcodeOrgId) {
         this.app = app;
         this.os = "ios";
         this.origin = "simulator";

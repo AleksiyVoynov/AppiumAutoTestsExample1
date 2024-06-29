@@ -38,8 +38,6 @@ public class BasePage {
     }
 
     private List<String> getContext() {
-        ArrayList<String> s = new ArrayList<>(((SupportsContextSwitching) config.appiumDriver).getContextHandles());
-        //s.forEach(System.out::println);
         return new ArrayList<>(((SupportsContextSwitching) config.appiumDriver).getContextHandles());
     }
 

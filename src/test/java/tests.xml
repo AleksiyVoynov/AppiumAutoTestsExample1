@@ -1,13 +1,22 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Test Suite" parallel="tests" thread-count="2">
     <test name="IOS Test">
-        <parameter name="os" value="ios"/>
+        <parameter name="deviceName" value="iPhone"/>
+        <parameter name="model" value="15 Pro Max"/>
+        <parameter name="version" value="17.2"/>
+        <parameter name="uDID" value="B8124B25-68A4-4C5B-BC99-F9FFE9E7EFDB"/>
+        <parameter name="app" value="safari"/>
+        <parameter name="xcodeOrgId" value="lesha voynov (Personal Team)"/>
         <classes>
             <class name="GoogleSearchTest"/>
         </classes>
     </test>
     <test name="Android Test">
-        <parameter name="os" value="android"/>
+        <parameter name="deviceName" value="PIXEL"/>
+        <parameter name="model" value="sdk_gphone64_x86_64"/>
+        <parameter name="version" value="13"/>
+        <parameter name="uDID" value="emulator-5554"/>
+        <parameter name="app" value="chrome"/>
         <classes>
             <class name="GoogleSearchTest"/>
         </classes>

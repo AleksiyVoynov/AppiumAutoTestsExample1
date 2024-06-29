@@ -19,6 +19,7 @@
       
 ## Put your device setting instead mine:
 * you can find it here src/test/java/BaseTest.java ' private Device device = new Device(your settings)' 
+* or put yor settings to 'src/test/java/tests.xml'
 
 ## To run tests and generate Allure report:
 * open terminal

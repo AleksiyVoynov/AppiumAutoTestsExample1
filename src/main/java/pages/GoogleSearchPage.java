@@ -18,6 +18,7 @@ import java.time.Duration;
 public class GoogleSearchPage extends BasePage {
     private final By search = By.cssSelector("textarea[name='q']");
     private final By results = By.cssSelector("#rso [role='text'], #rso [role='link']");
+    private final By keyBoardButton = AppiumBy.iOSNsPredicateString("label == 'search'");
 
     public GoogleSearchPage(Config config) {
         super(config);
@@ -30,7 +31,7 @@ public class GoogleSearchPage extends BasePage {
             ((AndroidDriver) config.appiumDriver).pressKey(new KeyEvent(AndroidKey.ENTER));
         } else if (config.device instanceof IOS){
             nativeContext();
-            config.appiumDriver.findElement(AppiumBy.iOSNsPredicateString("label == 'search'")).click();
+            config.appiumDriver.findElement(keyBoardButton).click();
             webViewContext();
         }
     }

@@ -19,9 +19,4 @@ public class GoogleSearchTest extends BaseTest {
         googleSearchPage.searchFor(testData);
         Assert.assertTrue(googleSearchPage.getSearchingResult(testData), "nothing was found");
     }
-
-    @Test(priority = 2, description = "os")
-    public void testGoogleSearch2() {
-        System.out.println(config.device.os);
-    }
 }
