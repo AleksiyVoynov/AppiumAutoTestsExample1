@@ -6,7 +6,6 @@
 * installed uiautomator2 driver
 * For Android, you should have the virtual device from Android Studio
 * For iOS, you should have a simulator from Xcode and setup WebDriverAgent to simulator
-* For iOS, you should have a simulator from Xcode and setup WebDriverAgent to simulator
 
 
 # Guide:
@@ -29,7 +28,7 @@
 
 ## You can run auto test in parallel for Android and IOS
 * open terminal
-* cd (path to /AppiumAutotestsTestNg)
+* cd (path to /AppiumAutoTestsExample1)
 * run `gradle clean`
 * run `gradle parallelTest`
 
