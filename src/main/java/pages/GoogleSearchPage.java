@@ -1,8 +1,8 @@
 package pages;
 
 import configs.Config;
-import configs.devices.simulators.Android;
-import configs.devices.simulators.IOS;
+import configs.devices.Android;
+import configs.devices.IOS;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.nativekey.AndroidKey;

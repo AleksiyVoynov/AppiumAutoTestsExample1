@@ -3,8 +3,8 @@ import configs.app.App;
 import configs.app.ChromeApp;
 import configs.app.SafariApp;
 import configs.devices.Device;
-import configs.devices.simulators.Android;
-import configs.devices.simulators.IOS;
+import configs.devices.Android;
+import configs.devices.IOS;
 import configs.platformConfig.android.AndroidConfig;
 import configs.platformConfig.ios.IOSConfig;
 import io.qameta.allure.Attachment;
@@ -28,12 +28,17 @@ public class BaseTest implements IHookable {
      * or
      * Example for IOS:
      * private Device device = new IOS("iPhone", "15 Pro Max", "17.2", "B8124B25-68A4-4C5B-BC99-F9FFE9E7EFDB", new SafariApp(), "lesha voynov (Personal Team)");
+     * <p>
+     * credential for real device:
+     * private Device device = new Android("SAMSUNG", "SM-T875", "13", "R52R301FPHA", new ChromeApp());
+     * private Device device = new IOS("iPad", "Pro (12.9-inch) (3rd generation)", "17.2", "00008027-001E68A101E3002E", new SafariApp(), "lesha voynov (Personal Team)");
      */
     private Device device = new IOS("iPhone", "15 Pro Max", "17.2", "B8124B25-68A4-4C5B-BC99-F9FFE9E7EFDB", new SafariApp(), "lesha voynov (Personal Team)");
+
     protected Config config;
 
     @BeforeClass
-    @Step("setting up Appium driver")
+    @Step("setting up appium driver")
     @Parameters({"deviceName", "model", "version", "uDID", "app", "xcodeOrgId"})
     protected void setUp(@Optional("default") String deviceName,
                          @Optional("default") String model,
@@ -64,7 +69,7 @@ public class BaseTest implements IHookable {
     }
 
     @AfterClass
-    @Step("tearing down Appium driver")
+    @Step("tearing down appium driver")
     protected void tearDown() {
         config.appiumDriver.quit();
     }
